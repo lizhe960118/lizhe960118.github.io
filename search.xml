@@ -3,29 +3,6 @@
   
     
     <entry>
-      <title>upload-image</title>
-      <link href="/2018/10/30/upload-image/"/>
-      <url>/2018/10/30/upload-image/</url>
-      
-        <content type="html"><![CDATA[<p>图片上传测试<br><img src="/2018/10/30/upload-image/0.jpg" alt="images in here"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> skills </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2018/10/30/hello-world/"/>
       <url>/2018/10/30/hello-world/</url>
@@ -43,29 +20,6 @@
         <tags>
             
             <tag> markdown </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>使用Hexo搭建本地博客并git上传</title>
-      <link href="/2018/10/30/hexo-use/"/>
-      <url>/2018/10/30/hexo-use/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Hexo本地使用"><a href="#Hexo本地使用" class="headerlink" title="Hexo本地使用"></a>Hexo本地使用</h1><h2 id="从零开始安装Hexo"><a href="#从零开始安装Hexo" class="headerlink" title="从零开始安装Hexo"></a>从零开始安装Hexo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-clo // 一键搞定</span><br></pre></td></tr></table></figure><a id="more"></a><p>建立一个文件夹Hexo</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo i blog // init的缩写 blog是项目名  </span><br><span class="line">cd blog // 切到站点根目录</span><br><span class="line">hexo g // hexo generate</span><br><span class="line">hexo s // hexo server</span><br></pre></td></tr></table></figure><p>打开localhost:4000查看  </p><h2 id="换一个主题"><a href="#换一个主题" class="headerlink" title="换一个主题"></a>换一个主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><p>打开站点配置文件将主题改为：next<br>终端输入：  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean //清除缓冲</span><br><span class="line">hexo g // 重新生成代码</span><br><span class="line">hexo s // 部署到本地</span><br></pre></td></tr></table></figure><h1 id="本地博客上传到github"><a href="#本地博客上传到github" class="headerlink" title="本地博客上传到github"></a>本地博客上传到github</h1><h2 id="使用github建立一个新的项目"><a href="#使用github建立一个新的项目" class="headerlink" title="使用github建立一个新的项目"></a>使用github建立一个新的项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">New repository // 命名为username.github.io</span><br></pre></td></tr></table></figure><h2 id="创建pages"><a href="#创建pages" class="headerlink" title="创建pages"></a>创建pages</h2><h2 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h2><h1 id="部署hexo站点到github上"><a href="#部署hexo站点到github上" class="headerlink" title="部署hexo站点到github上"></a>部署hexo站点到github上</h1><h2 id="修改hexo站点的配置文件"><a href="#修改hexo站点的配置文件" class="headerlink" title="修改hexo站点的配置文件"></a>修改hexo站点的配置文件</h2><p>配置文件冒号后面有半角空格</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">  type: git  </span><br><span class="line">     repository: https://github.com/username/username.github.io</span><br><span class="line">     branch: master</span><br></pre></td></tr></table></figure><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  </span><br><span class="line">hexo g  </span><br><span class="line">hexo d //hexo deploy</span><br></pre></td></tr></table></figure><h1 id="发布新的博客"><a href="#发布新的博客" class="headerlink" title="发布新的博客"></a>发布新的博客</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &apos;new_post&apos; // hexo n &apos;new_post&apos;</span><br></pre></td></tr></table></figure><p>会生成新的new_post.md在source/_posts下 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><blockquote><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 更多hexo主题<br><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">https://www.zhihu.com/question/24422335</a> 知乎上的hexo主题</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> skills </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
             
         </tags>
       
