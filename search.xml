@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>upload-image</title>
+      <link href="/2018/10/30/upload-image/"/>
+      <url>/2018/10/30/upload-image/</url>
+      
+        <content type="html"><![CDATA[<p>图片上传测试<br><img src="/2018/10/30/upload-image/0.jpg" alt="images in here"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> skills </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2018/10/30/hello-world/"/>
       <url>/2018/10/30/hello-world/</url>
@@ -62,8 +85,8 @@
     
     <entry>
       <title></title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -71,8 +94,8 @@
     
     <entry>
       <title></title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
