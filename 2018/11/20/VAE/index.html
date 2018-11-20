@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Dreamer_LZ">
 <meta property="og:description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-20T04:31:10.627Z">
+<meta property="og:updated_time" content="2018-11-20T04:34:43.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变分自动编码器">
 <meta name="twitter:description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
@@ -366,8 +366,12 @@
 <p>定义kd_loss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">latent_loss = 0.5 * tf.reduce_sum(tf.square(z_mean) + tf.square(z_stddev) - tf.log(tf.square(z_stddev))-1, 1)</span><br></pre></td></tr></table></figure></p>
 <p>生成图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samples = tf.random_normal([batch_size, n_z], 0, 1, dtype=tf.float32)</span><br><span class="line">sampled_z = z_mean + (z_stddev * samples)</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><p>PCA 降维模型</p>
-<h2 id="概率PCA-生成模型"><a href="#概率PCA-生成模型" class="headerlink" title="概率PCA 生成模型"></a>概率PCA 生成模型</h2><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul>
+<h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><ul>
+<li>PCA 降维模型</li>
+<li>概率PCA 生成模型</li>
+</ul>
+<hr>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul>
 <li><a href="http://blog.otoro.net/2016/04/01/generating-large-images-from-latent-vectors/" target="_blank" rel="noopener">结合VAE和GAN</a> <a href="https://jmetzen.github.io/2015-11-27/vae.html" target="_blank" rel="noopener">代码</a></li>
 <li><a href="https://www.cnblogs.com/huangshiyu13/p/6209016.html" target="_blank" rel="noopener">VAE(Variational Autoencoder)的原理</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247490939&amp;idx=1&amp;sn=7799ad3e2e864690c48c10fb3b919f37&amp;chksm=96e9c2fba19e4bed434f875d65a7696b0a49896b719272926a94b182deb5d3752b5f07ac4332&amp;scene=0#rd" target="_blank" rel="noopener">漫谈概率 PCA 和变分自编码器</a></li>
@@ -574,7 +578,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Autoencoder-自动编码器"><span class="nav-number">1.</span> <span class="nav-text">Autoencoder 自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#降维模型"><span class="nav-number">1.1.</span> <span class="nav-text">降维模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variational-Autoencoder-变分自动编码器"><span class="nav-number">2.</span> <span class="nav-text">Variational Autoencoder 变分自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成模型"><span class="nav-number">2.1.</span> <span class="nav-text">生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率PCA-生成模型"><span class="nav-number">3.1.</span> <span class="nav-text">概率PCA 生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Autoencoder-自动编码器"><span class="nav-number">1.</span> <span class="nav-text">Autoencoder 自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#降维模型"><span class="nav-number">1.1.</span> <span class="nav-text">降维模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variational-Autoencoder-变分自动编码器"><span class="nav-number">2.</span> <span class="nav-text">Variational Autoencoder 变分自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成模型"><span class="nav-number">2.1.</span> <span class="nav-text">生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
