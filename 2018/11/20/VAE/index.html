@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="variable autoencoder,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Stay Young, Stay Foolish">
-<meta name="keywords" content="BUPT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dreamer_LZ">
-<meta property="og:url" content="http://lizhe960118.github.io/tags/leetcode/index.html">
+<meta name="description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
+<meta name="keywords" content="variable autoencoder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变分自动编码器">
+<meta property="og:url" content="http://lizhe960118.github.io/2018/11/20/VAE/index.html">
 <meta property="og:site_name" content="Dreamer_LZ">
-<meta property="og:description" content="Stay Young, Stay Foolish">
+<meta property="og:description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-20T04:31:10.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dreamer_LZ">
-<meta name="twitter:description" content="Stay Young, Stay Foolish">
+<meta name="twitter:title" content="变分自动编码器">
+<meta name="twitter:description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://lizhe960118.github.io/tags/leetcode/">
+  <link rel="canonical" href="http://lizhe960118.github.io/2018/11/20/VAE/">
 
 
 
 
 
-  <title>标签: leetcode | Dreamer_LZ</title>
+  <title>变分自动编码器 | Dreamer_LZ</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -248,78 +249,188 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>leetcode<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lizhe960118.github.io/2018/11/20/VAE/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Zhe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/33644782?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dreamer_LZ">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/31/House_Robber_problems/" itemprop="url">
-              
-                <span itemprop="name">House Robbers</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">变分自动编码器</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-31T17:59:01+08:00" content="2018-10-31">
-          10-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T13:59:01+08:00">
+                2018-11-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/machine-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">machine learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/31/Coin-Change/" itemprop="url">
-              
-                <span itemprop="name">Coin Change</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-31T12:59:01+08:00" content="2018-10-31">
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h1 id="Autoencoder-自动编码器"><a href="#Autoencoder-自动编码器" class="headerlink" title="Autoencoder 自动编码器"></a>Autoencoder 自动编码器</h1><h2 id="降维模型"><a href="#降维模型" class="headerlink" title="降维模型"></a>降维模型</h2><ul>
+<li>encoder：得到一张图片，将图片的编码向量存起来</li>
+<li>decoder：使用这些编码向量来重构我们的图像<a id="more"></a>
+</li>
+</ul>
+<hr>
+<h1 id="Variational-Autoencoder-变分自动编码器"><a href="#Variational-Autoencoder-变分自动编码器" class="headerlink" title="Variational Autoencoder 变分自动编码器"></a>Variational Autoencoder 变分自动编码器</h1><h2 id="生成模型"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型</h2><ul>
+<li>encoder:对编码器添加约束，强迫其产生服从单位高斯分布的潜在变量</li>
+<li>decoder:既可以由图片经过encoder编码，也可以从单位高斯分布采样产生</li>
+</ul>
+<p>损失函数：图片的重构误差 + 潜在变量分布于高斯分布之间的差异<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">generation_loss = mean(square(generated_image - real_image))</span><br><span class="line">latent_loss = KL-Divergence(latent_variable, unit_gaussian)</span><br><span class="line">loss = generation_loss + latent_loss</span><br></pre></td></tr></table></figure></p>
+<p>定义kd_loss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">latent_loss = 0.5 * tf.reduce_sum(tf.square(z_mean) + tf.square(z_stddev) - tf.log(tf.square(z_stddev))-1, 1)</span><br></pre></td></tr></table></figure></p>
+<p>生成图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samples = tf.random_normal([batch_size, n_z], 0, 1, dtype=tf.float32)</span><br><span class="line">sampled_z = z_mean + (z_stddev * samples)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><p>PCA 降维模型</p>
+<h2 id="概率PCA-生成模型"><a href="#概率PCA-生成模型" class="headerlink" title="概率PCA 生成模型"></a>概率PCA 生成模型</h2><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul>
+<li><a href="http://blog.otoro.net/2016/04/01/generating-large-images-from-latent-vectors/" target="_blank" rel="noopener">结合VAE和GAN</a> <a href="https://jmetzen.github.io/2015-11-27/vae.html" target="_blank" rel="noopener">代码</a></li>
+<li><a href="https://www.cnblogs.com/huangshiyu13/p/6209016.html" target="_blank" rel="noopener">VAE(Variational Autoencoder)的原理</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247490939&amp;idx=1&amp;sn=7799ad3e2e864690c48c10fb3b919f37&amp;chksm=96e9c2fba19e4bed434f875d65a7696b0a49896b719272926a94b182deb5d3752b5f07ac4332&amp;scene=0#rd" target="_blank" rel="noopener">漫谈概率 PCA 和变分自编码器</a></li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/variable-autoencoder/" rel="tag"># variable autoencoder</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/31/House_Robber_problems/" rel="next" title="House Robbers">
+                <i class="fa fa-chevron-left"></i> House Robbers
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -327,6 +438,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -347,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -440,6 +564,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Autoencoder-自动编码器"><span class="nav-number">1.</span> <span class="nav-text">Autoencoder 自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#降维模型"><span class="nav-number">1.1.</span> <span class="nav-text">降维模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variational-Autoencoder-变分自动编码器"><span class="nav-number">2.</span> <span class="nav-text">Variational Autoencoder 变分自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成模型"><span class="nav-number">2.1.</span> <span class="nav-text">生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概率PCA-生成模型"><span class="nav-number">3.1.</span> <span class="nav-text">概率PCA 生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -580,6 +720,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
