@@ -7,7 +7,7 @@
       <link href="/2018/11/20/VAE/"/>
       <url>/2018/11/20/VAE/</url>
       
-        <content type="html"><![CDATA[<h1 id="Autoencoder-自动编码器"><a href="#Autoencoder-自动编码器" class="headerlink" title="Autoencoder 自动编码器"></a>Autoencoder 自动编码器</h1><h2 id="降维模型"><a href="#降维模型" class="headerlink" title="降维模型"></a>降维模型</h2><ul><li>encoder：得到一张图片，将图片的编码向量存起来</li><li>decoder：使用这些编码向量来重构我们的图像<a id="more"></a></li></ul><hr><h1 id="Variational-Autoencoder-变分自动编码器"><a href="#Variational-Autoencoder-变分自动编码器" class="headerlink" title="Variational Autoencoder 变分自动编码器"></a>Variational Autoencoder 变分自动编码器</h1><h2 id="生成模型"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型</h2><ul><li>encoder:对编码器添加约束，强迫其产生服从单位高斯分布的潜在变量</li><li>decoder:既可以由图片经过encoder编码，也可以从单位高斯分布采样产生</li></ul><p>损失函数：图片的重构误差 + 潜在变量分布于高斯分布之间的差异<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">generation_loss = mean(square(generated_image - real_image))</span><br><span class="line">latent_loss = KL-Divergence(latent_variable, unit_gaussian)</span><br><span class="line">loss = generation_loss + latent_loss</span><br></pre></td></tr></table></figure></p><p>定义kd_loss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">latent_loss = 0.5 * tf.reduce_sum(tf.square(z_mean) + tf.square(z_stddev) - tf.log(tf.square(z_stddev))-1, 1)</span><br></pre></td></tr></table></figure></p><p>生成图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samples = tf.random_normal([batch_size, n_z], 0, 1, dtype=tf.float32)</span><br><span class="line">sampled_z = z_mean + (z_stddev * samples)</span><br></pre></td></tr></table></figure></p><hr><h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><ul><li>PCA 降维模型</li><li>概率PCA 生成模型</li></ul><hr><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul><li><a href="http://blog.otoro.net/2016/04/01/generating-large-images-from-latent-vectors/" target="_blank" rel="noopener">结合VAE和GAN</a> <a href="https://jmetzen.github.io/2015-11-27/vae.html" target="_blank" rel="noopener">代码</a></li><li><a href="https://www.cnblogs.com/huangshiyu13/p/6209016.html" target="_blank" rel="noopener">VAE(Variational Autoencoder)的原理</a></li><li><a href="https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247490939&amp;idx=1&amp;sn=7799ad3e2e864690c48c10fb3b919f37&amp;chksm=96e9c2fba19e4bed434f875d65a7696b0a49896b719272926a94b182deb5d3752b5f07ac4332&amp;scene=0#rd" target="_blank" rel="noopener">漫谈概率 PCA 和变分自编码器</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="Autoencoder-自动编码器"><a href="#Autoencoder-自动编码器" class="headerlink" title="Autoencoder 自动编码器"></a>Autoencoder 自动编码器</h1><h2 id="降维模型"><a href="#降维模型" class="headerlink" title="降维模型"></a>降维模型</h2><ul><li>encoder：得到一张图片，将图片的编码向量存起来</li><li>decoder：使用这些编码向量来重构我们的图像<a id="more"></a></li></ul><hr><h1 id="Variational-Autoencoder-变分自动编码器"><a href="#Variational-Autoencoder-变分自动编码器" class="headerlink" title="Variational Autoencoder 变分自动编码器"></a>Variational Autoencoder 变分自动编码器</h1><h2 id="生成模型"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型</h2><ul><li>encoder:对编码器添加约束，强迫其产生服从单位高斯分布的潜在变量</li><li>decoder:既可以由图片经过encoder编码，也可以从单位高斯分布采样产生</li></ul><p>损失函数：图片的重构误差 + 潜在变量分布于高斯分布之间的差异<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">generation_loss = mean(square(generated_image - real_image))</span><br><span class="line">latent_loss = KL-Divergence(latent_variable, unit_gaussian)</span><br><span class="line">loss = generation_loss + latent_loss</span><br></pre></td></tr></table></figure></p><p>定义kd_loss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">latent_loss = 0.5 * tf.reduce_sum(tf.square(z_mean) + tf.square(z_stddev) - tf.log(tf.square(z_stddev))-1, 1)</span><br></pre></td></tr></table></figure></p><p>生成图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samples = tf.random_normal([batch_size, n_z], 0, 1, dtype=tf.float32)</span><br><span class="line">sampled_z = z_mean + (z_stddev * samples)</span><br></pre></td></tr></table></figure></p><hr><h1 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h1><ul><li>PCA 降维模型</li><li>概率PCA 生成模型</li></ul><hr><h1 id="LDA-vs-PCA"><a href="#LDA-vs-PCA" class="headerlink" title="LDA vs PCA"></a>LDA vs PCA</h1><ul><li>LDA选择分类性能最好的投影方向，PCA选择样本点投影具有最大方差的方向</li></ul><hr><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul><li><a href="http://blog.otoro.net/2016/04/01/generating-large-images-from-latent-vectors/" target="_blank" rel="noopener">结合VAE和GAN</a> <a href="https://jmetzen.github.io/2015-11-27/vae.html" target="_blank" rel="noopener">代码</a></li><li><a href="https://www.cnblogs.com/huangshiyu13/p/6209016.html" target="_blank" rel="noopener">VAE(Variational Autoencoder)的原理</a></li><li><a href="https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&amp;mid=2247490939&amp;idx=1&amp;sn=7799ad3e2e864690c48c10fb3b919f37&amp;chksm=96e9c2fba19e4bed434f875d65a7696b0a49896b719272926a94b182deb5d3752b5f07ac4332&amp;scene=0#rd" target="_blank" rel="noopener">漫谈概率 PCA 和变分自编码器</a></li></ul>]]></content>
       
       
       <categories>
@@ -145,15 +145,6 @@
     
     <entry>
       <title></title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    <entry>
-      <title></title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
       
@@ -167,6 +158,15 @@
       <url>/about/index.html</url>
       
         <content type="html"><![CDATA[<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul><li>手机：18810899275</li><li>Email：<a href="mailto:2957308424@qq.com" target="_blank" rel="noopener">2957308424@qq.com</a></li><li>微信号：lazy960118</li></ul><h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><ul><li>李哲 / 男 /1996</li><li>硕士 / 北京邮电大电子工程学院 / 在读</li><li>技术博客：<a href="https://lizhe960118.github.io">https://lizhe960118.github.io</a></li><li>个人专栏：</li><li><p>Github：<a href="http://github.com/lizhe960118" target="_blank" rel="noopener">http://github.com/lizhe960118</a></p></li><li><p>期望职位：开发岗位实习，算法岗位实习</p></li><li>期望城市：北京</li></ul><h2 id="技术文章"><a href="#技术文章" class="headerlink" title="技术文章"></a>技术文章</h2><ul><li><a href="http://github.com/lizhe960118" target="_blank" rel="noopener">斯坦福课程cs231n</a></li></ul><hr><h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>]]></content>
+      
+    </entry>
+    
+    <entry>
+      <title></title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Dreamer_LZ">
 <meta property="og:description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-20T04:34:43.404Z">
+<meta property="og:updated_time" content="2018-11-21T03:10:04.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变分自动编码器">
 <meta name="twitter:description" content="Autoencoder 自动编码器降维模型 encoder：得到一张图片，将图片的编码向量存起来 decoder：使用这些编码向量来重构我们的图像">
@@ -371,6 +371,10 @@
 <li>概率PCA 生成模型</li>
 </ul>
 <hr>
+<h1 id="LDA-vs-PCA"><a href="#LDA-vs-PCA" class="headerlink" title="LDA vs PCA"></a>LDA vs PCA</h1><ul>
+<li>LDA选择分类性能最好的投影方向，PCA选择样本点投影具有最大方差的方向</li>
+</ul>
+<hr>
 <h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul>
 <li><a href="http://blog.otoro.net/2016/04/01/generating-large-images-from-latent-vectors/" target="_blank" rel="noopener">结合VAE和GAN</a> <a href="https://jmetzen.github.io/2015-11-27/vae.html" target="_blank" rel="noopener">代码</a></li>
 <li><a href="https://www.cnblogs.com/huangshiyu13/p/6209016.html" target="_blank" rel="noopener">VAE(Variational Autoencoder)的原理</a></li>
@@ -578,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Autoencoder-自动编码器"><span class="nav-number">1.</span> <span class="nav-text">Autoencoder 自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#降维模型"><span class="nav-number">1.1.</span> <span class="nav-text">降维模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variational-Autoencoder-变分自动编码器"><span class="nav-number">2.</span> <span class="nav-text">Variational Autoencoder 变分自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成模型"><span class="nav-number">2.1.</span> <span class="nav-text">生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Autoencoder-自动编码器"><span class="nav-number">1.</span> <span class="nav-text">Autoencoder 自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#降维模型"><span class="nav-number">1.1.</span> <span class="nav-text">降维模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variational-Autoencoder-变分自动编码器"><span class="nav-number">2.</span> <span class="nav-text">Variational Autoencoder 变分自动编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成模型"><span class="nav-number">2.1.</span> <span class="nav-text">生成模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关"><span class="nav-number">3.</span> <span class="nav-text">相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LDA-vs-PCA"><span class="nav-number">4.</span> <span class="nav-text">LDA vs PCA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">5.</span> <span class="nav-text">reference</span></a></li></ol></div>
             
 
           </div>
